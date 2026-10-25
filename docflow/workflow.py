@@ -1,10 +1,6 @@
-"""Workflow 引擎：节点、连线、条件路由与顺序执行。
+"""Workflow 引擎。
 
-设计目标是"够用且可扩展"：
-- 节点 = :class:`~docflow.agent.Agent` 子类，引擎不关心其内部实现；
-- 连线 = :class:`Edge`，可带条件名，实现分支与回环；
-- 流程可以用代码搭，也可以用 JSON 描述（:meth:`Workflow.from_config`），
-  新增 Agent 只需要注册类型 + 加一个节点和两条边。
+节点是 Agent，连线是 Edge，可以带条件。流程能在代码里搭，也能用 JSON 描述。
 """
 
 from __future__ import annotations

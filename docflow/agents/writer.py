@@ -1,12 +1,7 @@
-"""写作 Agent：把结构化分析结果渲染成 Markdown API 文档。
+"""写作 Agent：把分析结果写成 Markdown。
 
-两种工作模式由共享状态里的 ``revision`` 决定：
-
-- ``revision == 0``：出**草稿**——只给签名和一句话说明，够快，但不完整；
-- ``revision >= 1``：按审校意见**扩写**——补参数表、返回值、复杂度与可运行示例。
-
-这种"先草稿再扩写"的节奏不是刻意制造返工，它对应真实的文档流程：
-先确认结构（有哪些符号），再补细节，最后过审。
+共享状态里的 revision 是 0 时只写签名和一句说明，算草稿；
+被打回后 revision 变成 1，再补参数表、返回值、复杂度和示例。
 """
 
 from __future__ import annotations
@@ -166,7 +161,7 @@ class WriterAgent(Agent):
         lines: List[str] = [
             f"# API 文档：{analysis['module']}",
             "",
-            f"> 由 docflow 自动生成 · {now} · revision {revision}",
+            f"> docflow 生成 · {now} · revision {revision}",
             "",
             "## 模块概览",
             "",
@@ -239,7 +234,7 @@ class WriterAgent(Agent):
             ])
             for param in params:
                 name = param["name"]
-                default = f"`{param['default']}`" if param["default"] else "—"
+                default = f"`{param['default']}`" if param["default"] else "-"
                 lines.append(f"| `{name}` | `{param['type']}` | {default} | {_describe_param(param)} |")
             lines.append("")
         else:

@@ -1,7 +1,6 @@
-"""消息定义与消息总线。
+"""消息和消息总线。
 
-Workflow 中所有 Agent 之间不直接互相调用，只通过 :class:`Message` 通信；
-:class:`MessageBus` 负责投递并保留完整历史，便于回放和调试。
+Agent 之间不直接调用，只传 Message。MessageBus 记录所有消息，方便回放。
 """
 
 from __future__ import annotations

@@ -14,7 +14,7 @@ TAX_RATE = 0.06
 def create_invoice(customer: str, items: list, tax_rate: float = TAX_RATE) -> dict:
     """根据订单明细生成一张发票。
 
-    发票号自动生成，金额按 ``tax_rate`` 计算增值税；
+    发票号随机生成，金额按 ``tax_rate`` 计算增值税；
     明细中每一项需包含 ``name``、``qty`` 与 ``unit_price`` 三个字段。
     """
     if not customer:

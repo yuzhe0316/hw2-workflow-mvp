@@ -1,10 +1,6 @@
-"""默认流水线与 Agent 注册表。
+"""默认流程、Agent 注册表和两个条件函数。
 
-新增一个流程节点只需要三步：
-1. 写一个 :class:`~docflow.agent.Agent` 子类；
-2. 在 ``REGISTRY`` 里登记类型名；
-3. 在配置的 ``agents`` / ``edges`` 里加节点和连线。
-引擎代码不需要任何改动。
+加节点时写一个 Agent 子类，在 REGISTRY 里登记，再改配置里的 agents 和 edges。
 """
 
 from __future__ import annotations

@@ -1,8 +1,6 @@
-"""Agent 抽象基类。
+"""Agent 基类。
 
-所有节点只需要实现 :meth:`Agent.handle`：收到一条消息 + 当前共享状态，
-返回一条回复消息（或 ``None`` 表示流程结束）。这样引擎与具体 Agent 解耦，
-新增节点不需要修改引擎。
+每个节点实现 handle(message, state)，返回一条回复消息，返回 None 表示结束。
 """
 
 from __future__ import annotations
