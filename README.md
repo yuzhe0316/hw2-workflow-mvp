@@ -1,14 +1,4 @@
-# HW2：三个 Agent 协作生成 API 文档
 
-SE2026 作业 2
-学号 2412190215　姓名 俞哲
-仓库地址：https://github.com/yuzhe0316/hw2-workflow-mvp
-
-作业要求做一个 2 到 3 个 Agent 的 Workflow。这个项目把 Python 源码转成 Markdown
-接口文档，三个 Agent 分别负责读代码、写文档、检查文档。检查不通过时文档会被退回
-重写，所以流程里既有顺序执行，也有一个条件回环。
-
-代码只用了 Python 标准库，3.9 以上可以直接跑，不用联网，也不需要 API Key。
 
 ## 运行
 
@@ -18,9 +8,7 @@ python -m docflow run path/to/module.py -o output/API.md
 python -m unittest discover -s tests -v
 ```
 
-`demo` 用的是 `examples/billing.py`，会把每一步的消息打印出来，最后在
-`output/billing_API.md` 生成文档。整个流程走 5 步：分析、写草稿、审校（60 分，打回）、
-扩写、再审（100 分，通过）。
+
 
 运行日志节选：
 
@@ -34,7 +22,6 @@ python -m unittest discover -s tests -v
 [ 0.004s] 结束：成功｜5 步｜4 ms
 ```
 
-完整日志在 `docs/demo_log.txt`，生成出来的文档样例在 `docs/sample_output.md`。
 
 ## 流程
 
@@ -171,18 +158,6 @@ python -m unittest discover -s tests -v
 - `test_agents_doc.py`：草稿内容、扩写内容、打回、复审通过、强制放行
 - `test_workflow.py`：完整 5 步、条件回环、max_steps、非法连线、JSON 配置
 
-## 没做完的地方
 
-- 一次只能处理一个文件，整个包还不行
-- 参数说明是按参数名和类型猜的，有些地方不太准
-- 顺序执行，没有做并行
-- 没有断点续跑，进程退出只能从头再来
 
-## 提交内容
 
-| 项目 | 位置 |
-|------|------|
-| 代码 | 本仓库，含提交历史 |
-| 文档 | README.md、Design.md |
-| 演示视频 | 可选，这次没录 |
-| 备份压缩包 | `2412190215俞哲.zip`，里面带 `.git` |
