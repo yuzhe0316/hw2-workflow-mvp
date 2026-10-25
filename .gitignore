@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 运行产物
+output/
+runs/
+
+# 本地环境
+.venv/
+venv/
+.env
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
