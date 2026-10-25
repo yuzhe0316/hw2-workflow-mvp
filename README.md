@@ -3,7 +3,7 @@
 > SE2026 Homework 2 · Simple Workflow MVP
 > 学号 **2412190215** · 姓名 **俞哲** · 2026-10-25
 >
-> 仓库地址：**（推送后填写，见文末「提交信息」）**
+> 仓库地址：**https://github.com/yuzhe0316/hw2-workflow-mvp**
 
 `docflow` 读取一个 Python 源文件，由 **分析 Agent → 写作 Agent → 审校 Agent** 依次协作，
 产出一份带参数表、返回值、复杂度与可运行示例的 Markdown API 文档。审校不通过时，
@@ -267,7 +267,7 @@ python -m unittest discover -s tests -v
 | 课程 | SE2026 |
 | 作业 | Homework 2 · Simple Workflow MVP |
 | 学号 / 姓名 | 2412190215 / 俞哲 |
-| 代码仓库 | **（推送后填写 GitHub URL）** |
+| 代码仓库 | **https://github.com/yuzhe0316/hw2-workflow-mvp** |
 | 演示视频 | 可选，本次未提交；终端实录见 [`docs/demo_log.txt`](docs/demo_log.txt) |
 | 备份压缩包 | `2412190215俞哲.zip`（含 `.git` 历史，< 200 MB） |
 
