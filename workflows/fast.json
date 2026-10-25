@@ -1,0 +1,14 @@
+{
+  "name": "fast-doc",
+  "description": "快速模式：跳过审校，分析后直接出文档",
+  "start": "analyzer",
+  "max_steps": 6,
+  "agents": [
+    {"name": "analyzer", "type": "analyzer"},
+    {"name": "writer", "type": "writer"}
+  ],
+  "edges": [
+    {"from": "analyzer", "to": "writer"},
+    {"from": "writer", "to": "__end__"}
+  ]
+}
